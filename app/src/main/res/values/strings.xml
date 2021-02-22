@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">TimesCopy</string>
+    <string-array name="titles">
+        <item>one</item>
+        <item>two</item>
+        <item>three</item>
+        <item>four</item>
+        <item>five</item>
+        <item>six</item>
+        <item>seven</item>
+        <item>eight</item>
+        <item>nine</item>
+        <item>teeeen</item>
+        <item>eleven</item>
+        <item>tweleve</item>
+        <item>nine</item>
+        <item>teeeen</item>
+        <item>eleven</item>
+        <item>tweleve</item>
+        <item>nine</item>
+        <item>teeeen</item>
+        <item>eleven</item>
+        <item>tweleve</item>
+        <item>nine</item>
+        <item>teeeen</item>
+        <item>eleven</item>
+        <item>tweleve</item>
+    </string-array>
+</resources>
