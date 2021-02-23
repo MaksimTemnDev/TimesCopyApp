@@ -21,7 +21,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     ArrayList<String> head = new ArrayList<>();
     ArrayList<String> article_content = new ArrayList<>();
-    String firstHead;
     Storage_Of_MainTXT databaseHelper;
     SQLiteDatabase storage;
 
@@ -31,17 +30,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ListView listView = findViewById(R.id.listView);
         databaseHelper  = new Storage_Of_MainTXT(getApplicationContext());
-        storage = databaseHelper.getWritableDatabase();
+        storage = databaseHelper.getReadableDatabase();
         Cursor cursor = storage.query(Storage_Of_MainTXT.TABLE_ARTICLES, null, null, null, null, null, null);
-        cursor.moveToFirst();
-        int index = cursor.getColumnIndex(Storage_Of_MainTXT.KEY_ID);
-        int titleId = cursor.getColumnIndex(Storage_Of_MainTXT.KEY_TITLE);
-        int articleId = cursor.getColumnIndex(Storage_Of_MainTXT.KEY_ARTICLE);
-        do {
-            head.add(cursor.getInt(index),cursor.getString(titleId));
-            article_content.add(cursor.getInt(index), cursor.getString(articleId));
-        }while (cursor.moveToNext());
-        cursor.close();
+            int index = cursor.getColumnIndex(Storage_Of_MainTXT.KEY_ID);
+            int titleId = cursor.getColumnIndex(Storage_Of_MainTXT.KEY_TITLE);
+            int articleId = cursor.getColumnIndex(Storage_Of_MainTXT.KEY_ARTICLE);
+            while (cursor.moveToNext()) {
+                head.add(cursor.getString(titleId));
+            }
+            cursor.close();
         databaseHelper.close();
         head.add("История о Есенине");
         head.add("Срочное сообщение!");
