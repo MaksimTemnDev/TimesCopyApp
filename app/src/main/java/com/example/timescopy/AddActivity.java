@@ -36,10 +36,10 @@ public class AddActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String article = editArticleText.getText().toString();
                 String heading = editHeadText.getText().toString();
-                db = databaseHelper.getReadableDatabase();
+                db = databaseHelper.getWritableDatabase();
                 ContentValues contentValues =new ContentValues();
                 contentValues.put(Storage_Of_MainTXT.KEY_TITLE, heading);
-                //contentValues.put(Storage_Of_MainTXT.KEY_ARTICLE, article);
+                contentValues.put(Storage_Of_MainTXT.KEY_ARTICLE, article);
                 if (contentValues != null) {
                     db.insert(Storage_Of_MainTXT.TABLE_ARTICLES, null, contentValues);
                 }

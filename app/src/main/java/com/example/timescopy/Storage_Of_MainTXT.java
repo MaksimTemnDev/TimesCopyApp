@@ -15,8 +15,8 @@ public class Storage_Of_MainTXT extends SQLiteOpenHelper {
     public static final String TABLE_ARTICLES = "Articles";
 
     public static final String KEY_ID = "_id";
-    public static final String KEY_TITLE= "_id";
-    public static final String KEY_ARTICLE = "_id";
+    public static final String KEY_TITLE= "_idTitle";
+    public static final String KEY_ARTICLE = "_idArticle";
 
     public Storage_Of_MainTXT(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
